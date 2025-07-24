@@ -1,0 +1,48 @@
+.newEntry {
+    width: 100%;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.entryForm {
+    width: 40%;
+    height: auto;
+    border-color: black;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: x-large;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: auto;
+    min-width: 600px;
+    animation-name: background;
+    animation-duration: 3s;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: medium;
+}
+
+.formButtons {
+    padding: 5px;
+}
+
+.submit, .reset {
+    font-size: large;
+    font-weight: bold;
+}
+
+@keyframes background {
+    from {opacity: 0%}
+    to {opacity: 100%}
+}
