@@ -1,28 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
 .newEntry {
-    width: 100%;
-    height: 90vh;
+    height: 100dvh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+}
+
+.newEntry:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.leftCol, .rightCol {
+    float: left;
+    width: 50%;
+    padding: 20px 20px 60px;
+}
+
+.leftCard, .rightCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    background-color: black;
+    border-color: black;
+    border-radius: 20px;
+    color: white;
+    min-width: 380px;
+}
+
+@media screen and (max-width: 800px) {
+    .leftCol, .rightCol {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
 }
 
 .entryForm {
-    width: 40%;
-    height: auto;
-    border-color: black;
-    border-radius: 20px;
-    background-color: black;
-    color: white;
-    font-size: x-large;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin: auto;
-    min-width: 600px;
-    animation-name: background;
-    animation-duration: 3s;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+textarea {
+    resize: inherit;
 }
 
 input, textarea {
@@ -35,14 +59,15 @@ input, textarea {
 
 .formButtons {
     padding: 5px;
+    text-align: center;
 }
 
 .submit, .reset {
     font-size: large;
     font-weight: bold;
-}
-
-@keyframes background {
-    from {opacity: 0%}
-    to {opacity: 100%}
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: medium;
 }

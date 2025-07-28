@@ -7,6 +7,7 @@ const Home = () => {
 
     return (
         <div className="home" style={{backgroundImage: `url(${Coffee1})` }} alt="Coffee on a table with spoon">
+            <title>The Coffee Journal - Home</title>
             <div className="buttons">
                 <div>
                     <Link to='/newentry'>
@@ -20,10 +21,9 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/>
             <div className="features">
                 <ul>New features coming soon!
-                    <li>Journal log</li>
                     <li>Locations & hours</li>
                     <li>Personalized favorite coffees and shops</li>
                 </ul>

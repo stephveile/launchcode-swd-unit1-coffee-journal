@@ -1,12 +1,8 @@
 import '../styles/Journal.css';
 import Coffee3 from '../assets/coffee_3.jpg';
 import {useState} from 'react';
-import NewEntry from './NewEntry';
 
-
-const Journal = () => {
-
-    const [prevOrders, setPrevOrders] = useState([
+const journalDatabase = [
         {
             id: "1",
             date: "2025-07-19",
@@ -22,28 +18,49 @@ const Journal = () => {
             order: "Iced Americano",
             rating: "3",
             review: "Really strong"
+        },
+        {
+            id: "3",
+            date: "2025-07-24",
+            name: "Cafe Dolce",
+            order: "Iced Vanilla Latte",
+            rating: "5",
+            review: "Perfectly sweet with a delicious vanilla bean flavor"
         }
-    ])
+    ];
 
-    const handleAddOrder = ({date, name, order, rating, review}) => {
-        const newOrder = {
-            date,
-            name,
-            order,
-            rating,
-            review,
-            id: self.crypto.randomUUID()
-        }
-        setPrevOrders([newOrder, ...prevOrders])
-        console.log("New entry:", name)
-    }
+const Journal = () => {
+
+    const [entryId, setEntryId] = useState("");
+    
+    const selectedEntry = journalDatabase.find((entry) => entry.id === entryId);
 
     return (
-        <div className="orders" style={{backgroundImage: `url(${Coffee3})` }} alt="Coffee on a table with succulent">
-            <h1>This is your order history:</h1>
-            <NewEntry onAddEntry={handleAddOrder}/>
+        <div className="journal" style={{backgroundImage: `url(${Coffee3})` }} alt="Coffee on a table with succulent">
+            <title>The Coffee Journal - Journal</title>
+            <h1 className="heading">Select a journal entry to view</h1>
+            <select className="dropdown" value={entryId} onChange={(event) => setEntryId(event.target.value)}>
+                <option value="">Choose an entry</option>
+                {journalDatabase.map((entry) => (
+                    <option key={entry.id} value={entry.id}>
+                        {entry.name} on {entry.date}
+                    </option>
+                ))}
+            </select>
+
+            <div className="entryDisplay">
+                {selectedEntry && (
+                    <div>
+                        <h2>Journal entry:</h2>
+                        <p>Date: {selectedEntry.date}</p>
+                        <p>Coffee Shop: {selectedEntry.name}</p>
+                        <p>Rating: {selectedEntry.rating}</p>
+                        <p>Review: {selectedEntry.review}</p>
+                    </div>
+                ) || "Error: Please choose an entry to display"}
+            </div>
         </div>
-    )
+    );
 }
 
 export default Journal;
