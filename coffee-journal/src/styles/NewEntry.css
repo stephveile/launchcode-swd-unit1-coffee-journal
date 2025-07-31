@@ -4,9 +4,12 @@
 
 .newEntry {
     height: 100dvh;
+    min-height: auto;
+    max-height: auto;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin-top: 100px;
 }
 
 .newEntry:after {
@@ -31,11 +34,10 @@
     min-width: 380px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .leftCol, .rightCol {
         width: 100%;
         display: block;
-        margin-bottom: 20px;
     }
 }
 

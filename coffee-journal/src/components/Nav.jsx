@@ -11,9 +11,10 @@ const Nav = () => {
                 <h1>The Coffee Journal</h1>
             </div>
             <div className="right">
-                <Link to='/'>Home</Link>
+                <Link to='/home'>Home</Link>
                 <Link to='/newentry'>New Entry</Link>
                 <Link to='/journal'>Journal</Link>
+                <Link to='/about'>About Us</Link>
             </div>
         </div>
     );
